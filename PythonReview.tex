@@ -1,0 +1,144 @@
+\documentclass[11pt]{article}
+\pdfpagewidth 8.5in
+\pdfpageheight 11in
+
+\setlength\topmargin{0in}
+\setlength\headheight{0in}
+\setlength\headsep{0.25in}
+\setlength\textheight{7.7in}
+\setlength\textwidth{6.5in}
+\setlength\oddsidemargin{0in}
+\setlength\evensidemargin{0in}
+\setlength\parindent{0.25in}
+\setlength\parskip{0.5in} 
+\usepackage{verbatim}
+%\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+%\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb,amsmath}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage{fullpage}
+\usepackage{mdwlist}
+\usepackage{enumitem}
+\setdescription{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+
+\title{Python and Command Line Review}
+\author{Emily Josephs \& Nancy Chen}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+
+
+This is not a quiz! Please work through the questions. If you get stuck you can try actually running the scripts to see how they work. \\
+\textsl{Typeset conventions}: All code or code-like text is written in \texttt{constant-width font}.\\
+\begin{enumerate}
+\section*{Unix}
+\item Briefly define what the following unix commands will do.
+  \begin{itemize}
+  \item \texttt{cd /home/mydirectory}\\
+  \item \texttt{cd ..}\\
+  \item \texttt{cp}\\
+  \item \texttt{less}\\
+  \item \texttt{head}\\
+  \end{itemize}
+
+\item How do you save a file in vim? \\
+  \\
+
+
+\section*{Data types}
+
+\item Data can be stored as integers, floats, strings, or lists. Write the data type of each variable listed below.
+\begin{itemize}
+\item \texttt{'tomato'}
+  \item \texttt{56}
+  \item \texttt{72.2}
+  \item \texttt{['apple','pear','plum']}
+    \item \texttt{[1,2,3,4,5]}\\
+\end{itemize}
+
+\item \texttt{myFruit = ['apple','pear','plum']}. What does \texttt{myFruit[0]} refer to?\\
+  \\
+\item What would the output of \texttt{len(myFruit)} be?\\
+  \\
+
+\item Write down the code would you use to add \texttt{'tomato'} to the list \texttt{myFruit}.\\
+\\
+\\
+\\
+\\
+\section*{If/Else and For Loops}
+\item Look at the following script:
+\begin{verbatim}
+    myVeg = ['carrot','beet','bok choy']
+    if 'cabbage' in myVeg:
+        print('yay I can make cole slaw!')
+    else:
+        print('I need to go to the store')
+\end{verbatim}
+
+What will be printed out if you run the script?\\
+\\
+\\
+\\
+\item Look at the following script:
+\begin{verbatim}
+    myVeg = ['carrot', 'beet', 'bok choy']
+    for veg in myVeg:
+        print(myVeg[0])
+\end{verbatim}
+What will be printed if you run the script?\\
+\\
+\\
+\\
+\\
+
+\item Look at the following line:
+\begin{verbatim}
+    myCodons = ["atg","tac","ttt","tcc"]
+\end{verbatim}
+Write a short script that will tell you if the codon \texttt{`atg'} is in the list \texttt{myCodons}\\ 
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+
+\item
+  \texttt{codonTable[``atg'']} will return the amino acid coded by the codon \texttt{`atg'}. Write a script that will print out the amino acids coded by the four codons in \texttt{myCodons}. You will likely need to use a \texttt{for} loop.\\
+  \\
+  \\
+  \\
+  \\
+  \\
+  \\
+  \\
+  \\
+  \\
+  \\
+\item Open a new python file in vim and type the following code:
+\begin{verbatim}
+myRange = range(0,10)
+print(myRange)
+\end{verbatim}
+Write down what you think the \texttt{range} function does. What data type is the output?\\
+\\
+\\
+\\
+\\
+\\
+Edit the script to print out all the numbers between 20 and 30.
+\\
+\end{enumerate}
+\end{document}  

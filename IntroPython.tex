@@ -1,0 +1,129 @@
+\documentclass[11pt]{article}
+\pdfpagewidth 8.5in
+\pdfpageheight 11in
+
+\setlength\topmargin{0in}
+\setlength\headheight{0in}
+\setlength\headsep{0.25in}
+\setlength\textheight{7.7in}
+\setlength\textwidth{6.5in}
+\setlength\oddsidemargin{0in}
+\setlength\evensidemargin{0in}
+\setlength\parindent{0.25in}
+\setlength\parskip{0.5in} 
+
+%\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+%\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb,amsmath}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage{fullpage}
+\usepackage{mdwlist}
+\usepackage{enumitem}
+\setdescription{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+
+\title{Scripting in Python}
+\author{Emily Josephs \& Nancy Chen}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+
+Python is a programming language commonly used by biologists and many other programmers. It's simple to use but also quite powerful and powers websites like Google, Dropbox, and Reddit. It's named after Monty Python, not the snake. 
+\textsl{Typeset conventions}: All code or code-like text is written in \texttt{constant-width font}.\\
+
+\section*{Hello World!}
+\begin{itemize}
+
+\item Copy /home/emjosephs/hello\textunderscore world.py to your own folder. View hello\textunderscore world.py with vim. \\
+  What do you think the script does?\\
+\\
+
+\item Run hello\textunderscore world.py by typing the following command:\\
+\begin{itemize}
+\item \texttt {python hello\textunderscore world.py} \\
+  \end{itemize}
+
+
+\item Does the script do what you thought it would do? What does \texttt{print()} do? What does ``\#'' mean?\\
+\\
+\item Edit the script to print out ``Hello Nancy!''
+\\
+\end{itemize}
+
+\pagebreak
+\section*{Data types}
+Variables in python can take a few different forms:\\
+  \textbf{Integers} are numbers without decimal places.\\
+  \textbf{Floats} are numbers with decimal places.\\
+  \textbf{Strings} are sets of non-numeric characters. They have quotes around them. \\
+  \textbf{Lists} are collections of variables that are stored together. \\
+\begin{itemize}
+\item Copy /home/emjosephs/dataTypes.py to your own directory. View the file in vim. What types of variables are \texttt{Var1},  \texttt{Var2}, and  \texttt{Var3}?\\
+  \\
+\item Add together \texttt{Var1} and \texttt{Var2}. (You can use \texttt{print()} to display the answer). What is the sum of \texttt{Var1} and \texttt{Var2}?  What is the sum of \texttt{Var3} and \texttt{Var2}?
+  \\
+\item \texttt{myList} in dataTypes.py is a list. Add a line to the script that reads
+  \begin{itemize}
+    \item \texttt {print(myList[1])}
+  \end{itemize}
+  Write down the output of \texttt{dataTypes.py}.
+  \\
+  \\
+  \item Try editing that line to read:
+\begin{itemize}
+\item \texttt{print(myList[0:3]))}
+  \end{itemize}
+  What is the output now?
+  \\
+  \\
+\item Add a line to the script that reads:
+  \begin{itemize}
+  \item \texttt{print(len(myList))}
+  \end{itemize}
+  What do you think the \texttt{len()} function does? \\
+  \\
+
+\item Edit your script to add another variable to your list. (Hint: you can use \texttt{+}). Edit the script to print out the new length of \texttt{myList}\\
+  \\
+
+  \item You can also use \texttt{[ ]} on \textbf{strings}. Edit the script to print out the fourth character in \texttt{Var3}. What is it? \\
+\\
+  
+\end{itemize}
+
+\section*{If and else}
+\textbf{If} and \textbf{else} statements let you control what happens depending on if certain conditions are true or false.
+\begin{itemize}
+  \item Copy \texttt{/home/emjosephs/ifElse.py} to your own directory. Open up the file in Vim. Write down what you think will happen when you run this script?\\
+    \\
+  \item Run \texttt{ifElse.py}. Was your prediction correct? \\
+  \item Write a new set of \textbf{if} and \textbf{else} statements to tell you whether the sum of x and y is greater than 25. \\
+\end{itemize}
+
+\section*{For Loops}
+For loops let you move through a list of variables and let you do stuff to them.
+\begin{itemize}
+\item Copy \texttt{/home/emjosephs/forLoops.py} to your own directory. Open up the script and write down what you think the output will be. \\
+  \\
+\item Write a for loop to read through the list called \texttt{myStudents} and print out all the names that have more than 5 letters in them.
+\end{itemize} 
+
+  \section*{Reading in files}
+  The \texttt{open} function lets you read files into your script. \\
+
+  \begin{itemize}
+  \item Copy \texttt{/home/emjosephs/readFasta.py} into your folder. Run the script and write down the output. \\
+  \item Edit \texttt{readFasta.py} so that it reads in your own aligned fasta file. Run the script and write down the output. \\
+    \\
+    \item Comment out the line that reads \texttt{print(line)} and uncomment the line after it. (Hint: comments are any text that comes after a \#). Write down how the output of the script is different now.
+
+\end{itemize}
+
+
+\end{document}  

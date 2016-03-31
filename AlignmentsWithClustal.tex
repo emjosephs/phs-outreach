@@ -1,0 +1,64 @@
+\documentclass[11pt]{article}
+\pdfpagewidth 8.5in
+\pdfpageheight 11in
+
+\setlength\topmargin{0in}
+\setlength\headheight{0in}
+\setlength\headsep{0.25in}
+\setlength\textheight{7.7in}
+\setlength\textwidth{6.5in}
+\setlength\oddsidemargin{0in}
+\setlength\evensidemargin{0in}
+\setlength\parindent{0.25in}
+\setlength\parskip{0.5in} 
+
+%\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+%\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb,amsmath}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage{fullpage}
+\usepackage{mdwlist}
+\usepackage{enumitem}
+\setdescription{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+
+\title{Alignments with Clustal}
+\author{Emily Josephs \& Nancy Chen}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+
+This is simply a brief introduction to multiple sequence alignment with ClustalW.\\
+\textsl{Typeset conventions}: All code is written in \texttt{constant-width font}. Keyboard commands are in \textbf{bold}.\\
+
+\textbf{Input file formats}
+
+Gene sequences are stored in the data folder (~/data) in fasta format. To get a better feel for fasta format, copy the two fasta files corresponding to your gene to your own directory and use tools like top, less, and vim to look at the files. \\
+
+What are the two different parts of the fasta file? What comes after the ``\textgreater'' character? \\
+
+To align two sequences, we need to put these sequences in the same file. We can do that using ``cat''\\
+\begin{itemize*}
+\item \texttt {cat dumptruck*.fasta > alldumptruck.fasta}\\
+\end{itemize*}
+
+Now, it is time to align these sequences. Why do we want to do this again?
+
+\textbf{Using Clustal to align sequences}
+
+Clustal is a program for aligning two sequences. You can open it with the following command:\\
+
+\begin{itemize*}
+\item \texttt {clustalw}\\
+\end{itemize*}
+
+Using clustal is a bit like using a point-and-click program, except you interact with it in the command line by entering options when prompted. If at any point you get stuck, you can access Clustal's help. We will walk through it together.\\
+
+Congrats, you've aligned two gene sequences!!
+\end{document}  

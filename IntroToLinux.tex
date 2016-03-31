@@ -1,0 +1,196 @@
+\documentclass[11pt]{article}
+\pdfpagewidth 8.5in
+\pdfpageheight 11in
+
+\setlength\topmargin{0in}
+\setlength\headheight{0in}
+\setlength\headsep{0.25in}
+\setlength\textheight{7.7in}
+\setlength\textwidth{6.5in}
+\setlength\oddsidemargin{0in}
+\setlength\evensidemargin{0in}
+\setlength\parindent{0.25in}
+\setlength\parskip{0.5in} 
+
+%\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+%\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb,amsmath}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage{fullpage}
+\usepackage{mdwlist}
+\usepackage{enumitem}
+\setdescription{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+
+\title{Intro to Unix/Linux}
+\author{Emily Josephs \& Nancy Chen}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+
+This is simply a brief introduction to Unix/Linux and a bare bones list of useful commands. If you want to learn more, there are many more thorough/advanced guides online.\\
+\textsl{Typeset conventions}: All code is written in \texttt{constant-width font}. Keyboard commands are in \textbf{bold}.\\ 
+
+\textbf{The command line}
+
+The command line is a user interface where you interact with your computer by typing in commands at a prompt. It is accessed via the program Terminal, often found under Utilities or Accessories.
+
+The command line prompt provides information about the computer, the user, and the current directory. The order in which this information is presented may vary, but \texttt{\$} always means the shell is ready for input:
+\begin{itemize}
+\item Linux: \texttt{username@computername directory\$}\\
+ Ex: \texttt{nancy@ClarkLabLinux:Desktop\$})
+\item Unix: \texttt{computername:directory username\$}\\
+Ex: \texttt{NancysLaptop:Desktop nancychen\$}
+\end{itemize}
+
+All commands have this basic structure:
+
+\texttt{command [options] [arguments]}
+\begin{itemize*}
+\item options modify the action of the command and are usually preceded by a dash
+\item arguments provide additional info
+\item Ex: \texttt{ls -l Desktop}
+\end{itemize*}
+
+Some tips for using the command line:
+\begin{itemize*}
+\item use \textbf{copy/paste}
+\item use \textbf{up/down arrow} keys to cycle through commands
+\item use \textbf{TAB} to complete commands or present a list of choices
+\item avoid spaces in file names. Use underscore instead. Spaces are special characters and require a backslash: ``EEB Lunch Bunch" is denoted ``\texttt{EEB}\textbackslash\texttt{ Lunch}\textbackslash\texttt{ Bunch}"
+\item use wildcard characters (\texttt{*} = match anything). \texttt{*.txt} refers to all files ending in \texttt{.txt}
+\item \textbf{Control + C} will stop a running command and return to an active prompt
+\end{itemize*}
+
+\textbf{Directory structure}
+
+Unix has a hierarchical way of organizing files.
+
+When you log in, you are typically in your home directory (often denoted as \texttt{\~{}}).
+
+A single period (\texttt{.}) refers to the current directory.
+
+You can refer to files two ways:
+\begin{enumerate}
+\item absolute/full path:\\ 
+\texttt{/Users/nancychen/Desktop/EEB\_LunchBunch/IntroToLinux.txt} or\\
+\texttt{\~{}/Desktop/EEB\_LunchBunch/IntroToLinux.txt}
+\item relative path (depends on your current directory):\\
+ \texttt{EEB\_LunchBunch/IntroToLinux.txt} (if current directory is \texttt{/Users/nancychen/Desktop})\\
+\end{enumerate}
+
+
+\textbf{A LIST OF USEFUL COMMANDS}
+
+\texttt{man commandName}: manual page for a command. All commands have a help page. 
+\vspace{-2mm}
+\begin{itemize*}
+\item Scroll with \textbf{space} or \textbf{up/down arrows}. 
+\item Press \textbf{q} to quit.
+\end{itemize*}
+
+\texttt{history X}: prints the past \texttt{X} commands.\\ 
+
+\textbf{Working with directories}
+
+\texttt{pwd}: (print working directory) show the current directory
+
+\texttt{cd}: change directory (can use absolute or relative locations)
+\vspace{-2mm}
+\begin{itemize*} 
+\item  \texttt{cd}: go to home directory
+\item  \texttt{cd ..}: move one level up
+\item  \texttt{cd ../..}: move two levels up
+\item  \texttt{cd /}: go to the root directory
+\item  \texttt{cd -}: move back to directory you just left
+\end{itemize*}
+
+\texttt{mkdir newDir}: make new directory \texttt{newDir} in current directory
+
+\texttt{rmdir dirToDelete}: remove directory \texttt{dirToDelete}. Only works if it is empty.
+
+\texttt{ls myDir}: list the contents of directory \texttt{myDir}. If no directory is specified, lists contents of the current directory. Some useful options (see \texttt{man ls} for the full list): 
+\vspace{-2mm}
+\begin{description*}
+\item[\ \ \ ] \texttt{-l} : include info on permissions, ownership, size, and last modified date
+\item[\ \ \ ] \texttt{-a} : list hidden files \& folders as well
+\item[\ \ \ ] \texttt{-h} : list in human readable form
+\item[\ \ \ ] \texttt{-alt} : list in order of modification time (\texttt{-altr} to reverse order)
+\item[\ \ \ ] \texttt{-alS} : list in order of size (\texttt{-alSr} to reverse order)\\
+\end{description*}
+
+\vspace{2cm}
+
+\textbf{Working with files}
+
+\texttt{cp}: copy files
+\vspace{-2mm}
+
+
+\texttt{mv}: move files
+\vspace{-2mm}
+\begin{itemize*}
+\item \texttt{mv oldFile newFile}: move file \texttt{oldFile} to file \texttt{newFile}. Use this to rename files.
+\item \texttt{mv fileName newDir}: move file \texttt{fileName} to directory \texttt{newDir} without renaming the file.
+\end{itemize*}
+
+\texttt{rm fileName}: delete file (really delete, not just move it to Trash)
+\vspace{-2mm}
+\begin{itemize*}
+\item use option \texttt{-i} to ask for confirmation (a good idea)
+\end{itemize*}
+
+\texttt{less filename}: view a file
+\vspace{-2mm}
+\begin{itemize*}
+\item you can search within the file (forwards from your cursor position) by typing \textbf{/} followed by the desired text
+\item type \textbf{q} to exit.
+\end{itemize*}
+
+\texttt{head -X filename}: view first \texttt{X} lines in file (default is to show first 10 lines)
+
+\texttt{tail -X filename}: view last \texttt{X} lines in file (default is to show first 10 lines)
+
+\texttt{cat filename}: print file on screen. 
+\vspace{-2mm}
+\begin{itemize*}
+\item can be used to combine files: \texttt{cat file1 file2 \textgreater\  file3}.
+\item \textgreater  \ redirects output into \texttt{file3}.
+\end{itemize*}
+
+\texttt{wc filename(s)}: print the number of lines, words, characters in \texttt{filename(s)}
+\vspace{-2mm}
+\begin{itemize*}
+\item \texttt{wc -l filename}: print only the number of lines
+\end{itemize*}
+
+\texttt{grep "text" fileName(s)}: search for string \texttt{"text"} in the specified file(s)
+\vspace{-2mm}
+\begin{itemize*}
+\item option \texttt{-c} counts the number of lines that contain string \texttt{"text"}\\
+\end{itemize*}
+
+\textbf{Editing files}
+
+There are many command line text editors. The most common ones are:
+\begin{itemize}
+\item \texttt{nano filename}: open \texttt{filename} for editing. If no file is specified, it opens a new file. Already installed on most computers.
+\begin{itemize*}
+\item commands displayed in bottom bar
+\item \textbf{Control + X}: exit program
+\item \textbf{Control + O}: save changes
+\end{itemize*}
+\item \texttt{vi}: requires special keyboard commands. Installed on all Unix/Linux computers. 
+\item \texttt{emacs}: not always included. You might need to install it yourself.
+\end{itemize}
+You can always copy and paste from your favorite text editor on your local computer.\\
+
+
+
+\end{document}  
